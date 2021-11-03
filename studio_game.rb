@@ -4,8 +4,15 @@ class Character
     @hp = hp
   end
 
+  attr_accessor :name
+  attr_reader :hp
+
+  def name=(new_name)
+    @name = new_name.capitalize
+  end
+
   def to_s
-    "Player: #{@name}, HP: #{@hp}"
+    "Player: #{@name} \n HP: #{@hp} \n Pets: #{pet_collection}"
   end
 
   def heal_damage(heal)
@@ -17,16 +24,24 @@ class Character
     @hp -= damage
     puts "#{@name} took #{damage}pts of damage."
   end
+
+  def pet_collection
+    @hp + @name.length
+  end
+
 end
 
 
 proper = Character.new('proper', 100)
-mazer = Character.new('MAZER', 80)
+maser = Character.new('MASER', 80)
 takka = Character.new('taKka')
 delta = Character.new('deltA', 80)
 astra = Character.new('astra', 120)
 jim = Character.new('Zabrak Jim')
 
-puts jim
 puts proper
-puts delta
+puts takka.name
+puts maser.hp
+puts delta.hp
+astra.name = 'stratta'
+puts astra.name
