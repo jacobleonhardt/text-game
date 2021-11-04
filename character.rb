@@ -15,6 +15,10 @@ class Character
     "Player: #{@name} \n HP: #{@hp} \n Pets: #{pet_collection}"
   end
 
+  def strong?
+    @hp >= 51
+  end
+
   def heal_damage(heal)
     @hp += heal
     puts "#{@name} healed #{heal}pts of HP."
