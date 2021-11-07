@@ -2,6 +2,7 @@ require_relative "spec_helper"
 require_relative "game"
 require_relative "character"
 require_relative "die"
+require_relative "game_turn"
 
 describe Game do
   before do
@@ -13,24 +14,25 @@ describe Game do
 
   it "nat 20" do
     Die.any_instance.stub(:roll).and_return(20)
+    @game.play(3)
     @player.hp.should == @init_hp
   end
   it "high die roll" do
     Die.any_instance.stub(:roll).and_return(19)
-    @game.play
-    @player.hp.should == @init_hp + 15
+    @game.play(3)
+    @player.hp.should == @init_hp + 45
   end
 
   it "medium die roll" do
     Die.any_instance.stub(:roll).and_return(12)
-    @game.play
+    @game.play(3)
     @player.hp.should == @init_hp
   end
 
   it "low die roll" do
     Die.any_instance.stub(:roll).and_return(2)
-    @game.play
-    @player.hp.should == @init_hp - 10
+    @game.play(3)
+    @player.hp.should == @init_hp - 30
   end
   it "nat 1" do
     Die.any_instance.stub(:roll).and_return(1)

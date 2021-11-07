@@ -15,4 +15,5 @@ party.add_player(takka)
 party.add_player(delta)
 party.add_player(astra)
 
-party.play
+party.play(5)
+party.print_stats
