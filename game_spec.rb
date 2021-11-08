@@ -38,4 +38,19 @@ describe Game do
     Die.any_instance.stub(:roll).and_return(1)
     @player.hp.should == @init_hp
   end
+
+  context "in a collection of players" do
+    before do
+      @player1 = Character.new('Tri', 100)
+      @player2 = Character.new("Gev'or", 125)
+      @player3 = Character.new("Xander", 150)
+
+      @players = [@player1, @player2, @player3]
+    end
+
+    it "is sorted by decreasing score" do
+      @players.sort.should == [@player3, @player2, @player1]
+    end
+
+  end
 end

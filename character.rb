@@ -15,6 +15,10 @@ class Character
     "Player: #{@name} \n HP: #{@hp} \n Pets: #{pet_collection}"
   end
 
+  def <=>(other)
+    other.pet_collection <=> pet_collection
+  end
+
   def strong?
     @hp >= 51
   end

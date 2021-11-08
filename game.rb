@@ -1,6 +1,7 @@
 require_relative "character"
 require_relative "die"
 require_relative "game_turn"
+require_relative "pet_collection"
 
 class Game
   def initialize(title)
@@ -21,6 +22,12 @@ class Game
       puts char
     end
 
+    pets = PetCollection::PETS
+    puts "There are #{pets.length} different pets to collect."
+    pets.each do |pet|
+      puts "A #{pet.name} is worth #{pet.points} points."
+    end
+
     1.upto(rounds) do |i|
       puts "Round #{i}"
       @players.each do |character|
@@ -30,20 +37,30 @@ class Game
     end
   end
 
+  def print_name_and_health(char)
+    puts "#{char.name} (#{char.hp})"
+  end
+
   def print_stats
     healthy, wounded = @players.partition{|player| player.strong? }
 
     puts "#{healthy.length} healthy players:"
     healthy.each do |char|
-      puts "#{char.name} (#{char.hp})"
+      print_name_and_health(char)
     end
 
     puts "#{wounded.length} wounded players:"
     wounded.each do |char|
-      puts "#{char.name} (#{char.hp})"
+      print_name_and_health(char)
     end
   end
 
+  def high_scores
+    puts "#{@title} High Scores:"
+    @players.sort.each do |char|
+      puts "#{char.name.ljust(20, '.')}#{char.pet_collection}"
+    end
+  end
 end
 
 

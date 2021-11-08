@@ -1,5 +1,6 @@
 require_relative 'character'
 require_relative 'die'
+require_relative 'pet_collection'
 
 module GameTurn
 
@@ -17,6 +18,9 @@ module GameTurn
       else
         puts "Skipped."
       end
+
+      pet = PetCollection.random
+      puts "#{character.name} found a #{pet.name} worth #{pet.points} points."
   end
 
 
