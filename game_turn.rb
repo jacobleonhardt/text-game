@@ -20,7 +20,7 @@ module GameTurn
       end
 
       pet = PetCollection.random
-      puts "#{character.name} found a #{pet.name} worth #{pet.points} points."
+      character.adopt_pet(pet)
   end
 
 

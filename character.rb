@@ -2,6 +2,7 @@ class Character
   def initialize(name, hp=100)
     @name = name.capitalize
     @hp = hp
+    @adopted_pets = Hash.new(0)
   end
 
   attr_accessor :name
@@ -12,7 +13,7 @@ class Character
   end
 
   def to_s
-    "Player: #{@name} \n HP: #{@hp} \n Pets: #{pet_collection}"
+    "Player: #{@name} \n HP = #{@hp} \n Pets = #{points} \n Score = #{pet_collection}"
   end
 
   def <=>(other)
@@ -34,7 +35,17 @@ class Character
   end
 
   def pet_collection
-    @hp + @name.length
+    @hp + points
+  end
+
+  def adopt_pet(pet)
+    @adopted_pets[pet.name] += pet.points
+    puts "#{@name} adopted a #{pet.name} worth #{pet.points}."
+    puts "#{@name}'s pets include: #{@adopted_pets}"
+  end
+
+  def points
+    @adopted_pets.values.reduce(0, :+)
   end
 
 end

@@ -16,5 +16,4 @@ party.add_player(delta)
 party.add_player(astra)
 
 party.play(5)
-party.print_stats
-party.high_scores
+party.game_end

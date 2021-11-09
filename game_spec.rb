@@ -3,6 +3,7 @@ require_relative "game"
 require_relative "character"
 require_relative "die"
 require_relative "game_turn"
+require_relative "pet_collection"
 
 describe Game do
   before do
@@ -51,6 +52,16 @@ describe Game do
     it "is sorted by decreasing score" do
       @players.sort.should == [@player3, @player2, @player1]
     end
+  end
 
+  context "test pet adoption and score" do
+    it "assign a treasure for points during a player's turn" do
+      game = Game.new('Black Hole')
+      player = Character.new("Tri")
+
+      game.add_player(player)
+      game.play(1)
+      player.points.should_not be_zero
+    end
   end
 end

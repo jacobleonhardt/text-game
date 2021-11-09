@@ -53,6 +53,8 @@ class Game
     wounded.each do |char|
       print_name_and_health(char)
     end
+
+    @players.each {|char| puts "#{char.name}'s total score: \n#{char.pet_collection} grand total points"}
   end
 
   def high_scores
@@ -60,6 +62,11 @@ class Game
     @players.sort.each do |char|
       puts "#{char.name.ljust(20, '.')}#{char.pet_collection}"
     end
+  end
+
+  def game_end
+    print_stats
+    high_scores
   end
 end
 
