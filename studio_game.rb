@@ -1,19 +1,27 @@
 require_relative "game"
 require_relative "character"
 
-proper = Character.new('proper', 100)
-maser = Character.new('MASER', 80)
-takka = Character.new('taKka')
-delta = Character.new('deltA', 80)
-astra = Character.new('astra', 120)
-jim = Character.new('Zabrak Jim')
+puts "\nWelcome!"
+puts "Who's playing?"
+playing_party = gets.chomp
 
-party = Game.new('Donut Brigade')
-party.add_player(proper)
-party.add_player(maser)
-party.add_player(takka)
-party.add_player(delta)
-party.add_player(astra)
+party = Game.new(playing_party)
+party.load_players(ARGV.shift || "donut_brigade.csv")
 
-party.play(5)
-party.game_end
+loop do
+  puts "\nHow many rounds to you want to play? (type \"end\" to escape.)"
+  rounds = gets.chomp.downcase
+
+  case rounds
+  when /^\d+$/
+    party.play(rounds.to_i) {party.total_points >= 2000}
+  when "end", "quit", "escape", "exit"
+    party.game_end
+    break
+  else
+    puts "Do or do not..."
+  end
+
+end
+
+party.save_high_scores

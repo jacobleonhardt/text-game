@@ -11,6 +11,15 @@ class Game
 
   attr_reader :title
 
+  def load_players(file_name)
+    puts "Players:"
+    File.readlines(file_name).each do |line|
+      puts line
+      name, hp = line.split(',')
+      add_player(Character.new(name, Integer(hp)))
+    end
+  end
+
   def add_player(player)
     @players.push(player)
   end
@@ -23,22 +32,30 @@ class Game
     end
 
     pets = PetCollection::PETS
-    puts "There are #{pets.length} different pets to collect."
+    puts "\nThere are #{pets.length} different pets to collect:"
     pets.each do |pet|
-      puts "A #{pet.name} is worth #{pet.points} points."
+      puts ">> a #{pet.name} is worth #{pet.points} points"
     end
 
     1.upto(rounds) do |i|
-      puts "Round #{i}"
+      if block_given?
+        break if yield
+      end
+      puts "\nRound #{i} \n----------"
       @players.each do |character|
         GameTurn.take_turn(character)
         puts character
+        puts "----------"
       end
     end
   end
 
   def print_name_and_health(char)
     puts "#{char.name} (#{char.hp})"
+  end
+
+  def total_points
+    @players.reduce(0) {|sum, player| sum + player.points}
   end
 
   def print_stats
@@ -54,13 +71,54 @@ class Game
       print_name_and_health(char)
     end
 
-    @players.each {|char| puts "#{char.name}'s total score: \n#{char.pet_collection} grand total points"}
+    @players.each do |char|
+      puts "\n++ #{char.name}'s Total Score: "
+      char.each_pet_adopted do |pet|
+        puts "-- #{pet.points} total #{pet.name} points"
+      end
+      puts "== Grand Total: #{char.pet_collection}"
+    end
+
+    puts "\n== #{@title}'s Total Points: #{total_points}"
   end
 
   def high_scores
-    puts "#{@title} High Scores:"
+    puts "\n#{@title} High Scores:"
     @players.sort.each do |char|
       puts "#{char.name.ljust(20, '.')}#{char.pet_collection}"
+    end
+  end
+
+  def save_high_scores(file_name="high_scores.txt")
+    File.open(file_name, "w") do |file|
+      file.puts "=== #{@title}'s High Scores ==="
+      @players.sort.each do |char|
+        file.puts "#{char.name.ljust(20, '.')}#{char.pet_collection}"
+      end
+
+      file.puts "Player Breakdown:"
+
+      healthy, wounded = @players.partition{|player| player.strong? }
+
+      file.puts "\n#{healthy.length} healthy players:"
+      healthy.each do |char|
+        file.puts "#{char.name} (#{char.hp})"
+      end
+
+      file.puts "\n#{wounded.length} wounded players:"
+      wounded.each do |char|
+        file.puts "#{char.name} (#{char.hp})"
+      end
+
+      @players.each do |char|
+        file.puts "\n++ #{char.name}'s Total Score: "
+        char.each_pet_adopted do |pet|
+          file.puts "-- #{pet.points} total #{pet.name} points"
+        end
+        file.puts "== Grand Total: #{char.pet_collection}"
+      end
+
+      file.puts "\n=== #{@title}'s Total Points: #{total_points} ==="
     end
   end
 

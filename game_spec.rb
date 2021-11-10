@@ -64,4 +64,21 @@ describe Game do
       player.points.should_not be_zero
     end
   end
+
+  context "test grand total for all players" do
+    it "computes total points as the sum of all player points" do
+      game = Game.new("The Onus Project")
+      player1 = Character.new('Test One')
+      player2 = Character.new('Test Two')
+
+      game.add_player(player1)
+      game.add_player(player2)
+
+      player1.adopt_pet(Pets.new(:porg, 25))
+      player1.adopt_pet(Pets.new(:krayt_dragon, 1000))
+      player2.adopt_pet(Pets.new(:rancor, 400))
+
+      game.total_points.should == 1425
+    end
+  end
 end

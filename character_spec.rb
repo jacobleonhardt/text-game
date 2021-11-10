@@ -36,9 +36,29 @@ describe Character do
     @player.adopt_pet(Pets.new(:porg, 25))
     @player.adopt_pet(Pets.new(:aryx, 100))
     @player.pet_collection.should == 225
-
   end
 
+  it "yields each found treasure and its total points" do
+    @player.adopt_pet(Pets.new(:porg, 25))
+    @player.adopt_pet(Pets.new(:porg, 25))
+    @player.adopt_pet(Pets.new(:aryx, 100))
+    @player.adopt_pet(Pets.new(:womp_rat, 5))
+    @player.adopt_pet(Pets.new(:womp_rat, 5))
+    @player.adopt_pet(Pets.new(:womp_rat, 5))
+    @player.adopt_pet(Pets.new(:womp_rat, 5))
+    @player.adopt_pet(Pets.new(:womp_rat, 5))
+
+    yielded = []
+    @player.each_pet_adopted do |pet|
+      yielded << pet
+    end
+
+    yielded.should == [
+      Pets.new(:porg, 50),
+      Pets.new(:aryx, 100),
+      Pets.new(:womp_rat, 25)
+    ]
+  end
 
   context 'character is strong' do
     before do

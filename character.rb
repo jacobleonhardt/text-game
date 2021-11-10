@@ -1,3 +1,5 @@
+require_relative "pet_collection"
+
 class Character
   def initialize(name, hp=100)
     @name = name.capitalize
@@ -13,7 +15,7 @@ class Character
   end
 
   def to_s
-    "Player: #{@name} \n HP = #{@hp} \n Pets = #{points} \n Score = #{pet_collection}"
+    "#{@name}: \n HP = #{@hp} \n Pets = #{points} \n Score = #{pet_collection}"
   end
 
   def <=>(other)
@@ -42,6 +44,12 @@ class Character
     @adopted_pets[pet.name] += pet.points
     puts "#{@name} adopted a #{pet.name} worth #{pet.points}."
     puts "#{@name}'s pets include: #{@adopted_pets}"
+  end
+
+  def each_pet_adopted
+    @adopted_pets.each do |name, points|
+      yield Pets.new(name, points)
+    end
   end
 
   def points
