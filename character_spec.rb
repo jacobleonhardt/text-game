@@ -25,10 +25,11 @@ describe Character do
     @player.heal_damage(20)
     @player.hp.should == @init_hp + 20
   end
+
   it 'has a string representation' do
     @player.adopt_pet(Pets.new(:porg, 25))
     @player.adopt_pet(Pets.new(:porg, 25))
-    @player.to_s.should == "Player: Proper \n HP = 100 \n Pets = 50 \n Score = 150"
+    @player.to_s.should == "Proper: \n HP = 100 \n Pets = 50 \n Score = 150"
   end
 
   it "computes points as the sum of all pets collected and health" do
@@ -36,6 +37,13 @@ describe Character do
     @player.adopt_pet(Pets.new(:porg, 25))
     @player.adopt_pet(Pets.new(:aryx, 100))
     @player.pet_collection.should == 225
+  end
+
+  it "can be created from a CSV string" do
+    player = Character.from_csv("Fehnor,120")
+
+    player.name.should == "Fehnor"
+    player.hp.should == 120
   end
 
   it "yields each found treasure and its total points" do

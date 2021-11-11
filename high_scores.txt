@@ -1,40 +1,61 @@
->>> Donute Brigade's High Scores: <<<
-Maser...............1470
-Delta...............1470
-Proper..............330
-Astra...............330
-Takka...............240
-5 healthy players:
+=== Black Hole's High Scores ===
+Maser...............2185
+Master mook.........1345
+Proper..............1080
+Zabrak jim..........594
+Astra...............575
+Takka...............270
+Delta...............180
+
+Player Breakdown:
+
+7 healthy players:
 Proper (80)
-Maser (70)
-Takka (115)
+Maser (85)
+Takka (70)
 Delta (70)
-Astra (125)
+Astra (100)
+Zabrak jim (80)
+Master mook (120)
+
 0 wounded players:
 
 ++ Proper's Total Score: 
+-- 800 total rancor points
 -- 200 total nexu points
--- 50 total tauntaun points
-== Grand Total: 330
+== Grand Total: 1080
 
 ++ Maser's Total Score: 
--- 1000 total krayt_dragon points
--- 400 total rancor points
-== Grand Total: 1470
+-- 2000 total krayt_dragon points
+-- 100 total aryx points
+== Grand Total: 2185
 
 ++ Takka's Total Score: 
+-- 100 total tauntaun points
 -- 100 total aryx points
--- 25 total porg points
-== Grand Total: 240
+== Grand Total: 270
 
 ++ Delta's Total Score: 
--- 400 total rancor points
--- 1000 total krayt_dragon points
-== Grand Total: 1470
+-- 100 total aryx points
+-- 10 total womp_rat points
+== Grand Total: 180
 
 ++ Astra's Total Score: 
--- 5 total womp_rat points
--- 200 total nexu points
-== Grand Total: 330
+-- 50 total tauntaun points
+-- 400 total rancor points
+-- 25 total porg points
+== Grand Total: 575
 
-=== Donute Brigade's Total Points: 3380 ===
+++ Zabrak jim's Total Score: 
+-- 500 total krayt_dragon points
+-- 12 total porg points
+-- 2 total womp_rat points
+== Grand Total: 594
+
+++ Master mook's Total Score: 
+-- 200 total nexu points
+-- 25 total porg points
+-- 1000 total krayt_dragon points
+== Grand Total: 1345
+
+=== Black Hole's Total Points: 5624 ===

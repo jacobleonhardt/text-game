@@ -26,6 +26,11 @@ class Character
     @hp >= 51
   end
 
+  def self.from_csv(line)
+    name, hp = line.split(',')
+    Character.new(name, Integer(hp))
+  end
+
   def heal_damage(heal)
     @hp += heal
     puts "#{@name} healed #{heal}pts of HP."
