@@ -1,61 +1,66 @@
-=== Black Hole's High Scores ===
-Maser...............2185
-Master mook.........1345
-Proper..............1080
-Zabrak jim..........594
-Astra...............575
-Takka...............270
-Delta...............180
+=== Donut Brigade's High Scores ===
+Takka...............1245
+Master mook.........1245
+Delta...............895
+Astra...............780
+Proper..............655
+Zabrak jim..........621
+Maser...............515
 
 Player Breakdown:
 
 7 healthy players:
-Proper (80)
-Maser (85)
-Takka (70)
+Proper (105)
+Maser (110)
+Takka (90)
 Delta (70)
-Astra (100)
-Zabrak jim (80)
-Master mook (120)
+Astra (125)
+Zabrak jim (85)
+Master mook (140)
 
 0 wounded players:
 
 ++ Proper's Total Score: 
--- 800 total rancor points
--- 200 total nexu points
-== Grand Total: 1080
+-- 50 total porg points
+-- 100 total aryx points
+-- 400 total rancor points
+== Grand Total: 655
 
 ++ Maser's Total Score: 
--- 2000 total krayt_dragon points
--- 100 total aryx points
-== Grand Total: 2185
+-- 200 total aryx points
+-- 200 total nexu points
+-- 5 total womp_rat points
+== Grand Total: 515
 
 ++ Takka's Total Score: 
--- 100 total tauntaun points
+-- 50 total tauntaun points
+-- 1000 total krayt_dragon points
 -- 100 total aryx points
-== Grand Total: 270
+-- 5 total womp_rat points
+== Grand Total: 1245
 
 ++ Delta's Total Score: 
--- 100 total aryx points
--- 10 total womp_rat points
-== Grand Total: 180
+-- 400 total nexu points
+-- 25 total porg points
+-- 400 total rancor points
+== Grand Total: 895
 
 ++ Astra's Total Score: 
--- 50 total tauntaun points
 -- 400 total rancor points
--- 25 total porg points
-== Grand Total: 575
+-- 200 total nexu points
+-- 5 total womp_rat points
+-- 50 total tauntaun points
+== Grand Total: 780
 
 ++ Zabrak jim's Total Score: 
+-- 36 total porg points
 -- 500 total krayt_dragon points
--- 12 total porg points
--- 2 total womp_rat points
-== Grand Total: 594
+== Grand Total: 621
 
 ++ Master mook's Total Score: 
--- 200 total nexu points
--- 25 total porg points
 -- 1000 total krayt_dragon points
-== Grand Total: 1345
+-- 5 total womp_rat points
+-- 100 total tauntaun points
+== Grand Total: 1245
 
-=== Black Hole's Total Points: 5624 ===
+=== Donut Brigade's Total Points: 5231 ===
