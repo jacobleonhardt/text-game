@@ -1,66 +1,62 @@
-=== Donut Brigade's High Scores ===
-Takka...............1245
-Master mook.........1245
-Delta...............895
-Astra...............780
-Proper..............655
-Zabrak jim..........621
-Maser...............515
+=== Test's High Scores ===
+Takka...............1680
+Master mook.........1250
+Proper..............1210
+Maser...............1160
+Zabrak jim..........1082
+Astra...............950
+Delta...............235
 
 Player Breakdown:
 
 7 healthy players:
 Proper (105)
-Maser (110)
-Takka (90)
-Delta (70)
+Maser (85)
+Takka (80)
+Delta (85)
 Astra (125)
-Zabrak jim (85)
-Master mook (140)
+Zabrak jim (70)
+Master mook (125)
 
 0 wounded players:
 
 ++ Proper's Total Score: 
--- 50 total porg points
 -- 100 total aryx points
--- 400 total rancor points
-== Grand Total: 655
+-- 5 total womp_rat points
+-- 1000 total krayt_dragon points
+== Grand Total: 1210
 
 ++ Maser's Total Score: 
--- 200 total aryx points
--- 200 total nexu points
--- 5 total womp_rat points
-== Grand Total: 515
-
-++ Takka's Total Score: 
+-- 25 total porg points
 -- 50 total tauntaun points
 -- 1000 total krayt_dragon points
--- 100 total aryx points
--- 5 total womp_rat points
-== Grand Total: 1245
+== Grand Total: 1160
+
+++ Takka's Total Score: 
+-- 200 total nexu points
+-- 1000 total krayt_dragon points
+-- 400 total rancor points
+== Grand Total: 1680
 
 ++ Delta's Total Score: 
--- 400 total nexu points
--- 25 total porg points
--- 400 total rancor points
-== Grand Total: 895
+-- 50 total porg points
+-- 100 total aryx points
+== Grand Total: 235
 
 ++ Astra's Total Score: 
--- 400 total rancor points
--- 200 total nexu points
--- 5 total womp_rat points
--- 50 total tauntaun points
-== Grand Total: 780
+-- 25 total porg points
+-- 800 total rancor points
+== Grand Total: 950
 
 ++ Zabrak jim's Total Score: 
--- 36 total porg points
--- 500 total krayt_dragon points
-== Grand Total: 621
+-- 12 total porg points
+-- 1000 total krayt_dragon points
+== Grand Total: 1082
 
 ++ Master mook's Total Score: 
 -- 1000 total krayt_dragon points
--- 5 total womp_rat points
--- 100 total tauntaun points
-== Grand Total: 1245
+-- 25 total porg points
+-- 100 total aryx points
+== Grand Total: 1250
 
-=== Donut Brigade's Total Points: 5231 ===
+=== Test's Total Points: 6892 ===

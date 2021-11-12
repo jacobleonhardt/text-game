@@ -3,8 +3,10 @@ require_relative "character"
 require_relative "legendary_character"
 require_relative "darkside_character"
 
-puts "\nWelcome!"
-puts "Who's playing?"
+puts "\nA long time ago,\nIn a galaxy far, far away..."
+puts "\nStar Wars: Animal Wrangler"
+
+puts "\n \nWhat's your party called?"
 playing_party = gets.chomp
 
 party = Game.new(playing_party)

@@ -1,11 +1,23 @@
 require_relative 'character'
 require_relative 'die'
+require_relative 'loaded_die'
 require_relative 'pet_collection'
 
 module GameTurn
 
+  def self.change_die
+    odds = [1, 2, 3, 4, 5, 6]
+    odds.sample
+  end
+
   def self.take_turn(character)
-      die = Die.new
+      puts "#{character.name}'s turn:"
+      if change_die = 6
+        die = LoadedDie.new
+      else
+        die = Die.new
+      end
+
       case die.roll
       when 15..19
         character.heal_damage(15)

@@ -55,7 +55,7 @@ describe Game do
   end
 
   context "test pet adoption and score" do
-    it "assign a treasure for points during a player's turn" do
+    it "assign a pet for points during a player's turn" do
       game = Game.new('Black Hole')
       player = Character.new("Tri")
 

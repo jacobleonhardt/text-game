@@ -1,14 +1,17 @@
 require_relative "pet_collection"
+require_relative "playable"
 
 class Character
+  include Playable
+
   def initialize(name, hp=100)
     @name = name.capitalize
     @hp = hp
     @adopted_pets = Hash.new(0)
   end
 
-  attr_accessor :name
-  attr_reader :hp
+  attr_accessor :hp
+  attr_reader :name
 
   def name=(new_name)
     @name = new_name.capitalize
@@ -22,23 +25,9 @@ class Character
     other.pet_collection <=> pet_collection
   end
 
-  def strong?
-    @hp >= 51
-  end
-
   def self.from_csv(line)
     name, hp = line.split(',')
     Character.new(name, Integer(hp))
-  end
-
-  def heal_damage(heal)
-    @hp += heal
-    puts "#{@name} healed #{heal}pts of HP."
-  end
-
-  def take_damage(damage)
-    @hp -= damage
-    puts "#{@name} took #{damage}pts of damage."
   end
 
   def pet_collection
