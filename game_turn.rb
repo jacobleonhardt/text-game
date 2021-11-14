@@ -11,29 +11,85 @@ module GameTurn
   end
 
   def self.take_turn(character)
-      puts "#{character.name}'s turn:"
-      if change_die = 6
+    pet = PetCollection.random
+    puts "A #{pet.name} has appeared!"
+
+    if change_die == 6
+      puts "You found a Loaded Die!\nDo you want to use it? Y/N"
+      selected = gets.chomp.downcase
+      if selected == 'n'
         die = LoadedDie.new
       else
         die = Die.new
       end
+    else
+      die = Die.new
+    end
 
-      case die.roll
-      when 15..19
-        character.heal_damage(15)
-      when 20
-        puts "Nat 20!"
-      when 2..8
-        character.take_damage(10)
-      when 1
-        puts "Oh no! Nat 1!"
+    check = die.roll
+
+
+    case check
+    when 1
+      puts "Oh no! Nat 1!"
+      puts "#{pet.name} got away..."
+      character.take_damage(15)
+    when 2..5
+      character.take_damage(10)
+      if "#{pet.name}" == "krayt_dragon" ||
+        "#{pet.name}" == "rancor" ||
+        "#{pet.name}" == "nexu" ||
+        "#{pet.name}" == "aryx" ||
+        "#{pet.name}" == "tauntaun" ||
+        "#{pet.name}" == "porg"
+        puts "#{pet.name} got away."
       else
-        puts "Skipped."
+        character.adopt_pet(pet)
       end
-
-      pet = PetCollection.random
+    when 6..8
+      character.take_damage(5)
+      if "#{pet.name}" == "krayt_dragon" || "#{pet.name}" == "rancor" || "#{pet.name}" == "nexu" || "#{pet.name}" == "aryx" || "#{pet.name}" == "tauntaun"
+        puts "#{pet.name} got away."
+      else
+        character.adopt_pet(pet)
+      end
+    when 9..11
+      character.heal_damage(5)
+      if "#{pet.name}" == "krayt_dragon" || "#{pet.name}" == "rancor" || "#{pet.name}" == "nexu" || "#{pet.name}" == "aryx"
+        puts "#{pet.name} got away."
+      else
+        character.adopt_pet(pet)
+      end
+    when 12..14
+      character.heal_damage(5)
+      if "#{pet.name}" == "krayt_dragon" || "#{pet.name}" == "rancor" || "#{pet.name}" == "nexu"
+        puts "#{pet.name} got away."
+      else
+        character.adopt_pet(pet)
+      end
+    when 15..17
+      character.heal_damage(5)
+      if "#{pet.name}" == "krayt_dragon" || "#{pet.name}" == "rancor"
+        puts "#{pet.name} got away."
+      else
+        character.adopt_pet(pet)
+      end
+    when 18..19
+      character.heal_damage(5)
+      if "#{pet.name}" == "krayt_dragon"
+        puts "#{pet.name} got away."
+      else
+        character.adopt_pet(pet)
+      end
+    when 20
+      puts "Nat 20!"
+      character.heal_damage(15)
       character.adopt_pet(pet)
+    when 21..40
+      character.heal_damage(10)
+    else
+        puts "#{pet.name} got away..."
+      end
   end
-
 
 end

@@ -42,6 +42,7 @@ class Game
       end
       puts "\nRound #{i} \n----------"
       @players.each do |character|
+        puts "#{character.name}'s turn..."
         GameTurn.take_turn(character)
         puts character
         puts "----------"

@@ -7,25 +7,26 @@ class Die
   #   roll
   # end
 
-  attr_reader :result
+  attr_reader :result, :rolled
+
+  # def roll(character)
+  #   @rolled = rand(1..20)
+  #   audit
+  #   @rolled
+  # end
 
   def roll
-    @result = rand(1..20)
-    audit
-    @result
+    puts "Roll a Handle Animal check..."
+    result = gets.chomp.downcase
+    case result
+    when /^\d+$/
+      puts "Rolled a #{result}."
+      return result.to_i
+    when "skip"
+      return 0
+    else
+      puts "Return your check result, or type 'skip' move on."
+    end
   end
-
-  # def roll
-  #   puts "Roll a Handle Animal check..."
-  #   result = gets.chomp.downcase
-  #   case result
-  #   when /^\d+$/
-  #     return result.to_i
-  #   when "skip"
-  #     return result
-  #   else
-  #     puts "Return your check result, or type 'skip' move on."
-  #   end
-  # end
 
 end

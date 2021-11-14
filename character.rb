@@ -4,10 +4,11 @@ require_relative "playable"
 class Character
   include Playable
 
-  def initialize(name, hp=100)
+  def initialize(name, hp=100, handle=0)
     @name = name.capitalize
     @hp = hp
     @adopted_pets = Hash.new(0)
+    @handle = handle
   end
 
   attr_accessor :hp
@@ -18,7 +19,7 @@ class Character
   end
 
   def to_s
-    "#{@name}: \n HP = #{@hp} \n Pets = #{points} \n Score = #{pet_collection}"
+    "#{@name}:\n HP = #{@hp}\n Pets = #{points}\n Score = #{pet_collection} \n"
   end
 
   def <=>(other)
