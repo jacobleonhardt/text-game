@@ -1,25 +1,27 @@
 require_relative "character"
 
-class DarksideCharacter < Character
+module StudioGame
+  class DarksideCharacter < Character
 
-  def initialize(name, hp=80, ds_points=1)
-    super(name, hp)
-    @ds_points = ds_points
-  end
+    def initialize(name, hp=80, ds_points=1)
+      super(name, hp)
+      @ds_points = ds_points
+    end
 
-  def sith?
-    @ds_points > 5
-  end
+    def sith?
+      @ds_points > 5
+    end
 
-  def heal_damage(points)
-    ds_heal = points * @ds_points
-    super(ds_heal)
-    @ds_points += 1 unless sith?
-  end
+    def heal_damage(points)
+      ds_heal = points * @ds_points
+      super(ds_heal)
+      @ds_points += 1 unless sith?
+    end
 
-  def adopt_pet(pet)
-    darkside_pet = Pets.new(pet.name, (pet.points / 2).to_i)
-    super(darkside_pet)
+    def adopt_pet(pet)
+      darkside_pet = Pets.new(pet.name, (pet.points / 2).to_i)
+      super(darkside_pet)
+    end
   end
 end
 
