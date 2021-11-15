@@ -1,10 +1,10 @@
 === Test's High Scores ===
-Astra...............535
-Maser...............195
-Delta...............195
-Proper..............165
-Takka...............165
-Master mook.........160
+Delta...............1095
+Takka...............515
+Master mook.........335
+Maser...............295
+Proper..............215
+Astra...............160
 Zabrak jim..........97
 
 Player Breakdown:
@@ -21,31 +21,31 @@ Master mook (135)
 0 wounded players:
 
 ++ Proper's Total Score: 
--- 50 total tauntaun points
-== Grand Total: 165
+-- 100 total aryx points
+== Grand Total: 215
 
 ++ Maser's Total Score: 
--- 100 total aryx points
-== Grand Total: 195
+-- 200 total nexu points
+== Grand Total: 295
 
 ++ Takka's Total Score: 
--- 50 total tauntaun points
-== Grand Total: 165
+-- 400 total rancor points
+== Grand Total: 515
 
 ++ Delta's Total Score: 
--- 100 total aryx points
-== Grand Total: 195
+-- 1000 total krayt_dragon points
+== Grand Total: 1095
 
 ++ Astra's Total Score: 
--- 400 total rancor points
-== Grand Total: 535
+-- 25 total porg points
+== Grand Total: 160
 
 ++ Zabrak jim's Total Score: 
 -- 2 total womp_rat points
 == Grand Total: 97
 
 ++ Master mook's Total Score: 
--- 25 total porg points
-== Grand Total: 160
+-- 200 total nexu points
+== Grand Total: 335
 
-=== Test's Total Points: 727 ===
+=== Test's Total Points: 1927 ===
